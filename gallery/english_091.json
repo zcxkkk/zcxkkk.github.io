@@ -1,0 +1,30 @@
+﻿[
+    {
+        "albumTitle": "大连交通大学 英语+软件工程091班",
+        "h1": "h1 Album 888",
+        "images": [
+            {
+                "largeUrl": "https://b2vfqa.bn1.livefilestore.com/y2p5Z88foCkWlI9eWYLlU0qI7mLw6973mD1CmL6U1Qg1qt4sQnZT9GwZgSVRB1egiTYgrWp7QXcxfHuUCUvo7y_hG-47qJ3ZjVJfP1Lf1kE7Ro/01.jpg",
+                "thumbUrl": "http://jgallery.jakubkowalczyk.pl/images/thumbs/12.jpg",
+                "alt": "01英语",
+                "bgColor": "#0A0703",
+                "textColor": "#FFEDA3"
+            },
+            {
+                "largeUrl": "http://jgallery.jakubkowalczyk.pl/images/large/13.jpg",
+                "thumbUrl": "http://jgallery.jakubkowalczyk.pl/images/thumbs/13.jpg",
+                "alt": "the second pic",
+                "bgColor": "#111211",
+                "textColor": "#FFFFFF"
+            },
+            {
+                "largeUrl": "http://jgallery.jakubkowalczyk.pl/images/large/14.jpg",
+                "thumbUrl": "http://jgallery.jakubkowalczyk.pl/images/thumbs/14.jpg",
+                "alt": "the third pic",
+                "bgColor": "#120B0A",
+                "textColor": "#fff"
+            }
+        ]
+    }
+    
+]
