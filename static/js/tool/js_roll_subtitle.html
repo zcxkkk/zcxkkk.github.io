@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>rolling subtitle</title>
+<style type="text/css">
+#container{
+    background:#CCCCCC;
+    position:relative;
+    overflow:hidden;
+    width:550px;
+    height:25px;
+    line-height:25px;
+    margin:100px;
+}
+
+#content{
+    position:absolute;
+    left:0;
+    top:0;
+    white-space:nowrap;
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+    <div id="content">This is a roll word test,created by Baidu FE;This is a roll word test,created by Baidu FE;</div>
+</div>
+<script type="text/javascript">
+if(!window.rollWord){
+     var rollWord = {
+           container:document.getElementById("container"),  //container id
+           content:document.getElementById("content"),      //content id
+           _containerWidth:1,
+           _contentWidth:1,
+           _speed:1,
+           setSpeed:function(opt){
+                 var This = this;
+                 This._speed = opt;
+           },
+           setContainerWidth:function(){
+                 var This = this;
+                 This._containerWidth = This.container.offsetWidth;
+           },
+           setContentWidth:function(){
+                 var This = this;
+                 This._contentWidth = This.content.offsetWidth;
+           },
+           roll:function(){
+                 var This = this;
+                 This.content.style.left = parseInt(This._containerWidth) + "px";
+                 var time = setInterval(function(){This.move()},20);
+                 This.container.onmouseover = function(){
+                      clearInterval(time);
+                 };
+                 This.container.onmouseout = function(){
+                      time = setInterval(function(){This.move()},20);
+                 };
+           },
+           move:function(){
+                 var This = this;
+                 if(parseInt(This.content.style.left)+This._contentWidth > 0)
+                 {
+                      This.content.style.left = parseInt(This.content.style.left)-This._speed + "px";
+                 }
+                  else
+                  {
+                      This.content.style.left = parseInt(This._containerWidth) + "px";
+                  }                 
+           },
+           init:function(opt){
+                var This = this;
+                var speed = opt.speed || 1;
+                This.setSpeed(speed);
+                This.setContainerWidth();
+                This.setContentWidth();
+                This.roll();
+           }
+      }
+}
+      rollWord.init({speed:2});  //call runWord function
+</script>
+</body>
+</html>
