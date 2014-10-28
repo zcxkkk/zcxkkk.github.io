@@ -1,3 +1,5 @@
+
+//generate random password
 public String generatePwd(int digit) {
         String base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";     
         Random random = new Random();     
