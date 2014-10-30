@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-	<title>jQueryµ¥Ò³¹ö¶¯²å¼şpagepiling</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>jQueryå•é¡µæ»šåŠ¨æ’ä»¶pagepiling test</title>
 	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
 	<link rel="stylesheet" type="text/css" href="css/examples.css" />
 	<!--[if IE]>
@@ -27,15 +27,15 @@
 			    	if(deleteLog){
 			    		$('#callbacksDiv').html('');
 			    	}
-			    	$('#callbacksDiv').append('<p>Ò³Ãæ½«ÒªÀë¿ªonLeave - index:' + index +
-                                                ' ÏÂÒ»¸öÄ¿±ênextIndex:' + nextIndex +
-                                                ' ·½Ïòdirection:' + direction + '</p>')
+			    	$('#callbacksDiv').append('<p>é¡µé¢å°†è¦ç¦»å¼€onLeave - index:' + index +
+                                                ' ä¸‹ä¸€ä¸ªç›®æ ‡nextIndex:' + nextIndex +
+                                                ' æ–¹å‘direction:' + direction + '</p>')
 			    },
 			    afterRender: function(){
-			    	$('#callbacksDiv').append('<p>µÚÒ»´ÎäÖÈ¾Ö®ºóafterRender</p>');
+			    	$('#callbacksDiv').append('<p>ç¬¬ä¸€æ¬¡æ¸²æŸ“ä¹‹åafterRender</p>');
 			    },
 			    afterLoad: function(anchorLink, index){
-			    	$('#callbacksDiv').append('<p>¼ÓÔØÖ®ºóafterLoad - anchorLink:' + anchorLink + " index:" + index + '</p>');
+			    	$('#callbacksDiv').append('<p>åŠ è½½ä¹‹åafterLoad - anchorLink:' + anchorLink + " index:" + index + '</p>');
 
 			    	//section 2
 					if(index == 2){
@@ -104,27 +104,27 @@
 	<div id="pagepiling">
 	    <div class="section" id="section1">
 	    	<h1>Callbacks</h1>
-			<p>ÄÇÄã¿´Õâ¸öÊÇµÚÒ»Ò³. </p>
+			<p>é‚£ä½ çœ‹è¿™ä¸ªæ˜¯ç¬¬ä¸€é¡µ. </p>
 			<br />
 	    </div>
 	    <div class="section" id="section2">
 	    	<div class="intro">
 	    		<h1>Feel free</h1>
 	    		<p>All the callbacks you need to do whatever you need.</p>
-	    		<p>ÄÇÄã¿´Õâ¸öÊÇµÚ¶şÒ³.</p>
+	    		<p>é‚£ä½ çœ‹è¿™ä¸ªæ˜¯ç¬¬äºŒé¡µ.</p>
 	    	</div>
 	    </div>
 	    <div class="section" id="section3">
 	    	<div class="intro">
 	    		<h1>Ideal for animations</h1>
-	    		<p>ÄÇÄã¿´Õâ¸öÊÇµÚÈıÒ³.</p>
+	    		<p>é‚£ä½ çœ‹è¿™ä¸ªæ˜¯ç¬¬ä¸‰é¡µ.</p>
 	    	</div>
 	    </div>
 	    <div class="section" id="section4">
 	    	<div class="intro">
-	    		<h1>ÄÇÄã¿´Õâ¸öÊÇµÚ4Ò³.</h1>
-	    		<h2>ÄÇÄã¿´Õâ¸öÊÇµÚ4Ò³h2´óĞ¡.</h2>
-	    		<h1 class="donghuao">ÀÏ×ÓÓĞ¶¯»­Ğ§¹ûàŞ.</h1>
+	    		<h1>é‚£ä½ çœ‹è¿™ä¸ªæ˜¯ç¬¬4é¡µ.</h1>
+	    		<h2>é‚£ä½ çœ‹è¿™ä¸ªæ˜¯ç¬¬4é¡µh2å¤§å°.</h2>
+	    		<h1 class="donghuao">è€å­æœ‰åŠ¨ç”»æ•ˆæœå™¢.</h1>
 	    	</div>
 	    </div>
 	</div>
