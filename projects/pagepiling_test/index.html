@@ -21,7 +21,7 @@
 		$(document).ready(function() {
 	    	$('#pagepiling').pagepiling({
 	    		menu: '#menu',
-	    		anchors: ['page1', 'page2', 'page3'],
+	    		anchors: ['page1', 'page2', 'page3','page4'],
 			    sectionsColor: ['#9370DB', '#2ebe21', '#2C3E50', '#51bec4'],
 			    onLeave: function(index, nextIndex, direction){
 			    	if(deleteLog){
@@ -57,6 +57,13 @@
 						}, 1500, 'easeOutExpo');
 					}
 
+					//section 4
+					if(anchorLink == 'page4'){
+						$('#section4').find('.donghuao').delay(100).animate({
+								left: '0%'
+						}, 1500, 'easeOutExpo');
+					}
+
 					deleteLog = true;
 			    }
 			});
@@ -75,6 +82,11 @@
     	left: 140%;
 		position: relative;
     }
+
+    #section4 .donghuao{
+    	left: 140%;
+		position: relative;
+    }
     </style>
 
 </head>
@@ -84,6 +96,7 @@
 		<li data-menuanchor="page1" class="active"><a href="#page1">Page 1</a></li>
 		<li data-menuanchor="page2"><a href="#page2">Page 2</a></li>
 		<li data-menuanchor="page3"><a href="#page3">Page 3</a></li>
+		<li data-menuanchor="page4"><a href="#page4">Page 4</a></li>
 	</ul>
 
 	<div style="position:fixed;top:50px;left:50px;color:white;z-index:999;" id="callbacksDiv"></div>
@@ -105,6 +118,13 @@
 	    	<div class="intro">
 	    		<h1>Ideal for animations</h1>
 	    		<p>那你看这个是第三页.</p>
+	    	</div>
+	    </div>
+	    <div class="section" id="section4">
+	    	<div class="intro">
+	    		<h1>那你看这个是第4页.</h1>
+	    		<h2>那你看这个是第4页h2大小.</h2>
+	    		<h1 class="donghuao">老子有动画效果噢.</h1>
 	    	</div>
 	    </div>
 	</div>
