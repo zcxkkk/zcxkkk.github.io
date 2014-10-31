@@ -1,0 +1,43 @@
+$.ajax({
+			url : this.url,
+			processData: true,
+			type : "POST",
+			async: true,
+			contentType: "application/json",
+			dataType : "json",
+			data : JSON.stringify(this.postData),
+			complete:function(XMLHttpRequest, textStatus){
+				if(!this.async){
+					$("#progress").css("display","none");
+				}
+				if(textStatus=="success"){
+					var msg = JSON.parse(XMLHttpRequest.responseText)
+					if(msg &&msg.successFlag == '1'){
+						if (msg && msg['content']){
+							var contentStr = JSON.stringify(msg['content']);
+							contentStr =contentStr.replace(/null/g,"\"\"");
+							msg['content'] = JSON.parse(contentStr);
+						}
+						obj.complete(msg);
+					}else{
+						obj.error(msg);
+					}
+				}else{
+					if(XMLHttpRequest.status == 200){
+						$(document.body).append(XMLHttpRequest.responseText);
+					}else{
+						obj.error(XMLHttpRequest, textStatus);
+					}
+				}
+			}
+			
+		});
+	};
+
+	this.complete = function(data) {
+
+	};
+
+	this.error = function(XMLHttpRequest, textStatus) {
+		alert("failed！");
+	};
