@@ -1,0 +1,51 @@
+ti端@echo off
+REM if "%JAVA_HOME%" == "" goto error 
+IF DEFINED JAVA_HOME (
+  SET JAVA="%JAVA_HOME%\bin\java"
+) ELSE (
+  SET JAVA="java"
+)
+
+SET TOP=%~dp0
+SET BASE_LIB=%TOP%lib
+SET ANT_LIB=%BASE_LIB%
+SET CLASSPATH_JAR=classes
+SetLocal EnableDelayedExpansion
+FOR %%G IN (%BASE_LIB%\ant-*-ant-launcher.jar) DO SET LAUNCHER_JAR=%%G
+
+FOR %%i IN ("./lib/*.jar") DO SET CLASSPATH_JAR=!CLASSPATH_JAR!;lib/%%i
+
+%JAVA% -jar "%LAUNCHER_JAR%" -lib "%ANT_LIB%" -f run.xml startup -Djvm.xmx=4G -Detl.home=%etl_home% -Dmain.arg=startgoto
+ -Dclasspathjars=%CLASSPATH_JAR%
+ 
+ <?xml version="1.0"?>
+
+<project name="sge" default="" basedir=".">
+    <property name="dir.lib" value="lib" />
+   
+    <fileset id="fs.lib" dir="${dir.lib}">
+        <include name="**/*.jar" />
+    </fileset>
+    
+       <target name="startup" description="startup...">
+         <java  classname="com.neusoft.fd.sge.engine.EngineServer"  fork="true">
+           <arg value="${main.arg}"/>
+           <jvmarg line="-server -Xms${jvm.xmx} -Xmx${jvm.xmx} -Xmn2g -d64 -XX:+UseCompressedOops"/>
+           <classpath>
+                <fileset refid="fs.lib" />
+				<pathelement path="./classes"/>
+			</classpath>
+         </java>
+       </target>
+
+	   <target name="shutdown" description="shutdown...">
+         <j.neusoft.fd.sge.engine.EngineShutdown" fork="true">
+           <classpath>
+                <fileset refid="fs.lib" />
+				<pathelement path="./classes"/>
+			</classpath>
+         </java>
+       </target>
+
+</project>
+
