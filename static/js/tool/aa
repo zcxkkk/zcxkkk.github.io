@@ -1,0 +1,106 @@
+@ECHO OFF
+
+IF DEFINED JAVA_HOME (
+  SET JAVA="%JAVA_HOME%\bin\java"
+) ELSE (
+  SET JAVA="java"
+)
+
+SET TOP=%~dp0
+SET LAUNCHER_JAR=
+SET BASE_LIB=%TOP%lib
+SET ANT_LIB=%BASE_LIB%
+FOR %%G IN (%BASE_LIB%\ant-*-ant-launcher.jar) DO SET LAUNCHER_JAR=%%G
+IF [%LAUNCHER_JAR%] == [] (
+  ECHO "Couldn't find ant-launcher.jar"
+) ELSE (      
+  ECHO %JAVA% -jar "%LAUNCHER_JAR%" -lib "%ANT_LIB%" %1 %2 %3 %4 %5 %6
+  %JAVA% -jar "%LAUNCHER_JAR%" -lib "%ANT_LIB%" %1 %2 %3 %4 %5 %6
+  PAUSE
+)
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <project basedir="." default="zip" name="sge">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.6"/>
+    <property name="project.name" value="sge"/>
+    <path id="sge.classpath">
+        <fileset dir="lib">
+        </fileset>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <mkdir dir="bin/mkjar/com/neusoft/fdframework"/>
+        <mkdir dir="zip"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="fdframework">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="resources">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="init" name="build-project">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <src path="fdframework"/>
+            <src path="resources"/>
+            <src path="test"/>
+            <compilerarg line="-encoding UTF-8 "/>
+            <classpath refid="sge.classpath"/>
+        </javac>
+    </target>
+    <target depends="build-project" name="build">
+        <echo message="building..." />
+    </target> 
+    <target depends="build" name="jar" description="打jar包">
+        <echo message="generating jar..." />
+        <delete file="lib.fdframework.jar"/>
+        <copy todir="bin/mkjar/com/neusoft/fdframework">
+			<fileset dir="bin/com/neusoft/fdframework" />
+		</copy>
+        <jar destfile="lib/fdframework.jar" >
+           <fileset dir="bin/mkjar" />
+        </jar>
+        <delete dir="bin/mkjar"/>
+    </target>
+    <target name="genTimeStamp">
+        <tstamp prefix="build.">
+            <format property="TimeStamp" pattern="yyyyMMdd.HHmmss"/>
+        </tstamp>
+    </target> 
+    <target depends="jar,genTimeStamp" name="zip" description="将工程打成zip包">
+        <echo message="generating ZIP..." />
+        <zip destfile="zip/${project.name}_${build.TimeStamp}.zip">  
+            <zipfileset dir="lib" includes="**/*.*" prefix="lib"/>  
+            <zipfileset dir="bin" includes="**/*.*" prefix="classes"/>  
+            <zipfileset dir="install" includes="**/*.*" />  
+        </zip>
+    </target>
+</project>
