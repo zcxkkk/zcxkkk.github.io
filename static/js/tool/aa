@@ -24,7 +24,7 @@ IF [%LAUNCHER_JAR%] == [] (
 
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-    <project basedir="." default="zip" name="sge">
+    <project basedir="." default="zip" name="se">
     <property environment="env"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
@@ -36,7 +36,7 @@ IF [%LAUNCHER_JAR%] == [] (
     </path>
     <target name="init">
         <mkdir dir="bin"/>
-        <mkdir dir="bin/mkjar/com/neusoft/fdframework"/>
+        <mkdir dir="bin/mkjar/com/fdframework"/>
         <mkdir dir="zip"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
@@ -82,8 +82,8 @@ IF [%LAUNCHER_JAR%] == [] (
     <target depends="build" name="jar" description="打jar包">
         <echo message="generating jar..." />
         <delete file="lib.fdframework.jar"/>
-        <copy todir="bin/mkjar/com/neusoft/fdframework">
-			<fileset dir="bin/com/neusoft/fdframework" />
+        <copy todir="bin/mkjar/com/fdframework">
+			<fileset dir="bin/com/fdframework" />
 		</copy>
         <jar destfile="lib/fdframework.jar" >
            <fileset dir="bin/mkjar" />
