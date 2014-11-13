@@ -15,12 +15,12 @@ FOR %%G IN (%BASE_LIB%\ant-*-ant-launcher.jar) DO SET LAUNCHER_JAR=%%G
 
 FOR %%i IN ("./lib/*.jar") DO SET CLASSPATH_JAR=!CLASSPATH_JAR!;lib/%%i
 
-%JAVA% -jar "%LAUNCHER_JAR%" -lib "%ANT_LIB%" -f run.xml startup -Djvm.xmx=4G -Detl.home=%etl_home% -Dmain.arg=startgoto
+%JAVA% -jar "%LAUNCHER_JAR%" -lib "%ANT_LIB%" -f run.xml startup -Djvm.xmx=4G  -Dmain.arg=start
  -Dclasspathjars=%CLASSPATH_JAR%
  
  <?xml version="1.0"?>
 
-<project name="sge" default="" basedir=".">
+<project name="ss" default="" basedir=".">
     <property name="dir.lib" value="lib" />
    
     <fileset id="fs.lib" dir="${dir.lib}">
@@ -28,7 +28,7 @@ FOR %%i IN ("./lib/*.jar") DO SET CLASSPATH_JAR=!CLASSPATH_JAR!;lib/%%i
     </fileset>
     
        <target name="startup" description="startup...">
-         <java  classname="com.neusoft.fd.sge.engine.EngineServer"  fork="true">
+         <java  classname="com.mainr"  fork="true">
            <arg value="${main.arg}"/>
            <jvmarg line="-server -Xms${jvm.xmx} -Xmx${jvm.xmx} -Xmn2g -d64 -XX:+UseCompressedOops"/>
            <classpath>
@@ -39,7 +39,7 @@ FOR %%i IN ("./lib/*.jar") DO SET CLASSPATH_JAR=!CLASSPATH_JAR!;lib/%%i
        </target>
 
 	   <target name="shutdown" description="shutdown...">
-         <j.neusoft.fd.sge.engine.EngineShutdown" fork="true">
+         <java class="com.shut" fork="true">
            <classpath>
                 <fileset refid="fs.lib" />
 				<pathelement path="./classes"/>
