@@ -3,4 +3,5 @@
 *.name
 projects/pagepiling/.idea/*.*
 projects/pagepiling/.idea/scopes/scope_settings.xml
-projects/163/**.*
+projects/163/*.*
+projects/163.rar
