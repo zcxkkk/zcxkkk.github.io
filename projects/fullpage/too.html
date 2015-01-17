@@ -7,7 +7,6 @@
 <style>
 * { margin: 0; padding: 0;}
 body { font: 16px/1.8 "Microsoft Yahei",verdana;}
-
 /* 右侧导航 */
 #fullPage-nav { _display: none; font-size: 12px;}
 #fullPage-nav li { width: 90px; height: 21px; margin: 10px 0 0; vertical-align: middle;}
@@ -21,13 +20,6 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
 .section .bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
 .section .bg img { display: block; width: 100%; height: 100%;}
 
-.mail { position: absolute; left: 50%; top: -26px; width: 375px; height: 26px; margin-left: -187px; background-image: url(images/logo.png); transition: all 1s;}
-.mail { float: left; height: 26px; text-indent: -9999px;}
-.mail-163 { float: left; width: 107px;}
-.mail-126 { float: left;width: 108px; margin-left: 23px;}
-.mail-yeah { float: right; width: 115px;}
-
-.leng-1 { position: absolute; left: 50%; bottom: 5%; width: 536px; height: 685px; margin-left: -409px; background: url(images/leng-1.png) 50% 0 no-repeat; transition: all 1s;  bottom: -40%;}
 .leng-tittle-1 { position: absolute; left: 50%; top: 15%; width: 504px; height: 83px; margin-left: -252px;background: url(images/leng-tittle-1.png) 50% 0 no-repeat; opacity: 0;  -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5);transition: all 1s; }
 
 
@@ -35,92 +27,227 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
 .p2 { position: absolute; left: 30%; top: 15%; width: 510px; margin-left: -255px; margin-top: 130px; font-size: 16px; color: #727F8C; opacity: 0; transition: all 1s;}
 .p11 { position: absolute; left: 50%; top: 30%; width: 600px; margin: 0 0 0 -280px; font-size: 14px; color: #94a7c6; opacity: 0; transition: all 0.5s;}
 .hgroup { position: absolute; width: 554px; height: 176px; left: 50%; top: 25%; margin: 0 0 0 -277px; text-indent: -9999px; opacity: 0; -webkit-transform:scale(0.5, 0.5); transform:scale(0.5, 0.5); transition: all 1s;}
-.phone-screen-1 {
+
+.phone-2{
 	position: absolute;
-    background-image: url(http://www.zhihu.com/app/images/white-phone.png);
-    width: 297px;
+	width: 297px;
     height: 618px;
 	margin: 0 0 0 -280px;
 	left:50%;
-	bottom:-250px;
-    opacity: 0; 
-	    
-	transition: all 0.5s; 
-	-webkit-transition: all 0.5s;  
+    opacity: 0;
+	transition: all 1s; 
+	-webkit-transition:all 1s;  	
+}
+.phone-screen-2 {
+	position: absolute;
+    background-image: url(images/phone-1.png);
+    width: 297px;
+    height: 618px;
+	margin: 0 0 0 -280px;
+	left:75%;
+	bottom:-450px;
+
+	transition: all .4s; 
+	-webkit-transition:all .4s;  
+}
+.phone-screen-2:hover {
+	transform:translateY(-50px) rotate(0.5deg);
+	-webkit-transform:translateY(-50px) rotate(-0.5deg);
+}
+
+.phone-1{
+	position: absolute;
+	width: 297px;
+    height: 618px;
+	margin: 0 0 0 -280px;
+	left:70%;
+    opacity: 0;
+	transition: all 1s; 
+	-webkit-transition:all 1s;  	
+}
+.phone-screen-1 {
+	position: absolute;
+    background-image: url(images/phone-2.png);
+    width: 297px;
+    height: 618px;
+	margin: 0 0 0 -280px;
+	left:75%;
+	bottom:-450px;
+
+	transition: all .4s;
+	-webkit-transition:all .4s;
 }
 .phone-screen-1:hover {
-	 transform: translateY(-50px);
+	transform:translateY(-50px) rotate(0.5deg);
+	-webkit-transform:translateY(-50px) rotate(0.5deg);
 }
+
+/* section2*/
+.section2 .word-back {
+    position: absolute;
+    background-color: #ffffff;
+    width: 500px;
+    height: 600px;
+    opacity: 0;
+    top: 16%;
+    left: 60%;
+    margin: 0 0 0 -250px;
+    border-radius: 7px;
+    transition: all .4s;
+    -webkit-transition:all .4s;
+}
+.section2 .sec2-phone-main {
+    position: absolute;
+    background-image: url(images/phone-1.png);
+    width: 297px;
+    height: 618px;
+    margin: 0 0 0 -280px;
+    left: 45%;
+    top: 15%;
+    opacity: 0;
+    transition: all .4s;
+    -webkit-transition:all .4s;
+}
+.section2 .sec2-title{
+    position: absolute;
+    background-image: url(images/sec2-title.png);
+    width: 434px;
+    height: 116px;
+    top: 18%;
+    left: 49%;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    transform:scale(0.5, 0.5);
+    -webkit-transform:scale(0.5, 0.5);
+}
+.section2 .sec2-zhengwen-1 {
+    position: absolute;
+    background: url(images/sec2-zhengwen-1.png) 50% 0 no-repeat;;
+    width: 410px;
+    height: 100px;
+    top: 40%;
+    left: 49%;
+    margin-left: 251px;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    opacity: 0;
+
+}
+.section2 .sec2-zhengwen-2 {
+    position: absolute;
+    background: url(images/sec2-zhengwen-2.png) 50% 0 no-repeat;;
+    width: 357px;
+    height: 92px;
+    top: 60%;
+    left: 50%;
+    margin-top: 251px;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    opacity: 0;
+
+}
+/* section2 active*/
+
+.active .word-back{
+    opacity: 0.7; transition-delay: .5s;
+}
+.active .sec2-phone-main{
+    opacity: 1; transition-delay: 1s;
+}
+.active .sec2-title{
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transition-delay: 0.7s;
+}
+.active .sec2-zhengwen-1{
+    margin-left: 0px;
+    opacity: 1;
+    transition-delay: 0.7s;
+}
+.active .sec2-zhengwen-2{
+    margin-top: -25px;
+    opacity: 1;
+    transition-delay: 0.7s;
+}
+/* end of section2*/
+
 
 
 /* CSS3过度及动画 */
 
-.active .mail { top: 25px; transition-delay: 0.7s;}
 .active .p11 { opacity: 1; transition-duration: 1s; transition-delay: 2s;}
 .active .p1 { opacity: 1; transition-delay: 1.7s;}
 .active .p2 { top: 50px; opacity: 1; transition-delay: 1.7s;}
-.active .phone-screen-1 { opacity: 1; transition-delay: 1s;}
+.active .phone-2 { opacity: 1; transition-delay: 1s;}
+.active .phone-1 { opacity: 1; transition-delay: 1s;}
 
 .active .hgroup { opacity: 1; -webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 0.7s;}
 
-.active .leng-1 { bottom: -30%; transition-delay: 0.7s;}
 .active .leng-tittle-1 { opacity: 1; -webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 0.7s;}
 </style>
 <script src="js/jquery-2.0.3.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/jquery.fullPage.min.js"></script>
+<script src="http://127.0.0.1/_/js/reloader.js"></script>
 <script>
 $(function(){
 	$('#container').fullpage({
 		verticalCentered: false,
 		anchors: ['page1', 'page2', 'page3'],
 		navigation: true,
-		navigationTooltips: ['首页', '视觉', '交互']
+		navigationTooltips: ['首页', '二页', '三页']
 	});
 
-	
+    $(".phone-screen-2").click(function(){
+        alert('ios下载');
+    });
+    $(".phone-screen-1").click(function(){
+        alert('安卓下载');
+    });
+
 });
 </script>
 </head>
-<body>
+<body> 
 <div id="container">
 	<div class="section section1">
-		<div class="bg"><img src="http://www.zhihu.com/app/images/bg-ask.jpg" alt=""></div>
-		<div class="bg11"></div>
-		<div class="bg12"></div>
-		<div class="bg13"></div>
-		<div class="mail">
-		</div>
+		<div class="bg"><img src="images/bg-ask.jpg" alt=""></div>
+		<div class="show">
+			</div>
 		<div class="hgroup">
 			<h1><a href="#">冷兔APP</a></h1>
 			<h2>卒于不明寒冷</h2>
 		</div>
         <div class="leng-tittle-1"></div>
-        <div class="phone-screen-1"></div>
-		<p class="p11">冷笑话APP版本&mdash;&mdash;2015年最冷的要命的APP。其实我想知道这个文字怎么放会比较好<br>呵呵呵呵呵呵呵而后我觉得文案要先出才能排版吧</p>
+        <div class="phone-2">
+			<div class="phone-screen-2"></div>
+		</div>
+		<div class="phone-1">
+			<div class="phone-screen-1"></div>
+		</div>
+		<p class="p11">冷笑话APP版本&mdash;&mdash;2015年最冷的要命的APP。其实我想知道这个文字怎么放会比较好<br>呵呵呵呵呵呵呵而后我觉得文案要先出才能排版吧8fff8</p>
 	</div>
 
 	<div class="section section2">
 		<div class="bg"><img src="images/leng-back-1.jpg" alt=""></div>
-		<div class="bg21"></div>
-		<div class="bg22"></div>
-		<div class="bg23"></div>
-		<strong>[ 视觉·简 ]</strong>
-		<h3>华丽蜕变，尽享愉悦之美</h3>
-        <div class="leng-1"></div>
+        <div class="sec2-phone-main"></div>
+        <div class="word-back"></div>
+        <div class="sec2-title"></div>
+        <div class="sec2-zhengwen-1"></div>
+        <div class="sec2-zhengwen-2"></div>
+
         <p class="p1">冷死你丫不偿命。。。</p>
         <p class="p2">飞来的字</p>
-
 	</div>
 
 	<div class="section section3">
-		<div class="bg"><img src="images/leng-back-1.jpg" alt=""></div>
-		<div class="bg31"></div>
-		<div class="bg32"></div>
-		<div class="bg33"></div>
+		<div class="bg"><img src="images/bg-ask.jpg" alt=""></div>
+		
 		<strong>[ 视觉化交互设计 ]</strong>
 		<h3>心随眼动，感官直接体验</h3>
 		<p class="p3">邮箱 6.0 版采用了全新的视觉化交互设计，通过对界面的整体风格设计、重要信息的视觉化处理以及元素本身的视觉传达优化，来实现产品流程设计和交互行为塑造。从视觉的角度出发，让用户无需多想，直接通过感官与产品进行交互。</p>
 	</div>
 
 </div>
+
+</body>

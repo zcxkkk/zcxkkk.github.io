@@ -1,0 +1,80 @@
+<head><script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="http://sandbox.runjs.cn/uploads/rs/13/u3ykmqik/jquery.fullPage.css">
+	
+	<style>
+	.section{
+	background:#000;
+	color:#c00005;
+	position: relative; overflow: hidden;
+}
+
+.show{
+	width:100px;
+	height:100px;
+	background:#fff;
+	opacity:0;
+	-webkit-transition:1s all;
+	transition:1s all;
+}
+
+.active .show{
+	opacity:1;
+	-webkit-transition-delay:0.5s;
+	transition-delay:0.5s;
+}
+
+.rotate{
+	width:100px;
+	height:100px;
+	background:#c00005;
+	-webkit-transition:1s all;
+	transition:1s all;
+}
+
+.active .rotate{
+	-webkit-transform:rotate(360deg);
+	-webkit-transition-delay:2s;
+	transform:rotate(360deg);
+	transition-delay:2s;
+}
+	</style>
+</head>
+<body>
+	<div id="fullpage">
+    <div class="section section1"><div class="show">
+			</div>
+		<div class="rotate">
+			
+			</div>
+		</div>
+    <div class="section section2">Some section</div>
+    <div class="section section3"><div class="show">
+			</div></div> 
+    <div class="section section4">Some section</div>
+		<div class="section section5">Some section5
+			
+		</div>
+</div>
+</body>
+<script>
+$(function(){
+$('#fullpage').fullpage({
+        //Navigation
+        menu: false,
+        anchors:['page1', 'page2','page3','page4','page5'],
+        navigation: true,
+        navigationPosition: 'right',
+        navigationTooltips: ['firstSlide', 'secondSlide','3','4','5'],
+        verticalCentered: false,
+
+
+		//verticalCentered: false,
+		//anchors: ['page1', 'page2', 'page3'],
+		//navigation: true,
+		//navigationTooltips: ['首页', '视觉', '交互']
+    });
+});
+</script>
