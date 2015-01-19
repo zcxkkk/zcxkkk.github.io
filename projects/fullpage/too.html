@@ -35,8 +35,9 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
 	margin: 0 0 0 -280px;
 	left:50%;
     opacity: 0;
+	
+	-webkit-transition:all 1s;  
 	transition: all 1s; 
-	-webkit-transition:all 1s;  	
 }
 .phone-screen-2 {
 	position: absolute;
@@ -47,12 +48,14 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
 	left:75%;
 	bottom:-450px;
 
+	 
+	-webkit-transition:all .4s; 
 	transition: all .4s; 
-	-webkit-transition:all .4s;  
 }
 .phone-screen-2:hover {
-	transform:translateY(-50px) rotate(0.5deg);
+	
 	-webkit-transform:translateY(-50px) rotate(-0.5deg);
+	transform:translateY(-50px) rotate(-0.5deg);
 }
 
 .phone-1{
@@ -62,8 +65,9 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
 	margin: 0 0 0 -280px;
 	left:70%;
     opacity: 0;
+	
+	-webkit-transition:all 1s;
 	transition: all 1s; 
-	-webkit-transition:all 1s;  	
 }
 .phone-screen-1 {
 	position: absolute;
@@ -78,8 +82,9 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
 	-webkit-transition:all .4s;
 }
 .phone-screen-1:hover {
-	transform:translateY(-50px) rotate(0.5deg);
+	
 	-webkit-transform:translateY(-50px) rotate(0.5deg);
+	transform:translateY(-50px) rotate(0.5deg);
 }
 
 /* section2*/
@@ -90,23 +95,28 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
     height: 600px;
     opacity: 0;
     top: 16%;
-    left: 60%;
-    margin: 0 0 0 -250px;
+    left: 50%;
+   /* margin: 0 0 0 -250px;*/
+	/*margin-top: 250px; */
+	margin-left: -70px;
     border-radius: 7px;
-    transition: all .4s;
+    
     -webkit-transition:all .4s;
+	transition: all .4s;
 }
 .section2 .sec2-phone-main {
     position: absolute;
     background-image: url(images/phone-1.png);
     width: 297px;
     height: 618px;
-    margin: 0 0 0 -280px;
-    left: 45%;
+  
+    left: 50%;
     top: 15%;
+	margin-left: -400px;
     opacity: 0;
-    transition: all .4s;
+    
     -webkit-transition:all .4s;
+	transition: all .4s;
 }
 .section2 .sec2-title{
     position: absolute;
@@ -117,8 +127,9 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
     left: 49%;
     transition: all .4s;
     -webkit-transition: all .4s;
-    transform:scale(0.5, 0.5);
+    
     -webkit-transform:scale(0.5, 0.5);
+	transform:scale(0.5, 0.5);
 }
 .section2 .sec2-zhengwen-1 {
     position: absolute;
@@ -128,8 +139,9 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
     top: 40%;
     left: 49%;
     margin-left: 251px;
-    transition: all .4s;
+    
     -webkit-transition: all .4s;
+	transition: all .4s;
     opacity: 0;
 
 }
@@ -141,8 +153,9 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
     top: 60%;
     left: 50%;
     margin-top: 251px;
-    transition: all .4s;
+    
     -webkit-transition: all .4s;
+	transition: all .4s;
     opacity: 0;
 
 }
@@ -157,17 +170,17 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
 .active .sec2-title{
     transform: scale(1, 1);
     -webkit-transform: scale(1, 1);
-    transition-delay: 0.7s;
+    transition-delay: 1s;
 }
 .active .sec2-zhengwen-1{
     margin-left: 0px;
     opacity: 1;
-    transition-delay: 0.7s;
+    transition-delay: 1s;
 }
 .active .sec2-zhengwen-2{
     margin-top: -25px;
     opacity: 1;
-    transition-delay: 0.7s;
+    transition-delay: 1s;
 }
 /* end of section2*/
 
@@ -185,28 +198,6 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
 
 .active .leng-tittle-1 { opacity: 1; -webkit-transform:scale(1, 1); transform:scale(1, 1); transition-delay: 0.7s;}
 </style>
-<script src="js/jquery-2.0.3.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/jquery.fullPage.min.js"></script>
-<script src="http://127.0.0.1/_/js/reloader.js"></script>
-<script>
-$(function(){
-	$('#container').fullpage({
-		verticalCentered: false,
-		anchors: ['page1', 'page2', 'page3'],
-		navigation: true,
-		navigationTooltips: ['首页', '二页', '三页']
-	});
-
-    $(".phone-screen-2").click(function(){
-        alert('ios下载');
-    });
-    $(".phone-screen-1").click(function(){
-        alert('安卓下载');
-    });
-
-});
-</script>
 </head>
 <body> 
 <div id="container">
@@ -249,5 +240,28 @@ $(function(){
 	</div>
 
 </div>
+
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="http://127.0.0.1/_/js/reloader.js"></script>
+<script>
+$(function(){
+$('#container').fullpage({
+verticalCentered: false,
+anchors: ['page1', 'page2', 'page3'],
+            navigation: true,
+            navigationTooltips: ['首页', '二页', '三页']
+        });
+
+        $(".phone-screen-2").click(function(){
+            alert('ios下载');
+        });
+        $(".phone-screen-1").click(function(){
+            alert('安卓下载');
+        });
+
+    });
+</script>
 
 </body>
