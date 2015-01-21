@@ -6,7 +6,9 @@
 <link rel="stylesheet" href="css/jquery.fullPage.css">
 <style>
 * { margin: 0; padding: 0;}
-body { font: 16px/1.8 "Microsoft Yahei",verdana;}
+body { font: 16px/1.8 "Microsoft Yahei",verdana;
+
+}
 /* 右侧导航 */
 #fullPage-nav { _display: none; font-size: 12px;}
 #fullPage-nav li { width: 90px; height: 21px; margin: 10px 0 0; vertical-align: middle;}
@@ -16,7 +18,7 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
 .fullPage-tooltip { float: left; top: 0; margin-right: 5px; font: 12px "Microsoft Yahei"; color: #8F9DA4; line-height: 21px;}
 
 
-.section { position: relative; overflow: hidden;}
+.section { position: relative; overflow: hidden;min-width: 900px;}
 .section .bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
 .section .bg img { display: block; width: 100%; height: 100%;}
 
@@ -139,7 +141,7 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
     top: 40%;
     left: 49%;
     margin-left: 251px;
-    
+    margin-top: -50px;
     -webkit-transition: all .4s;
 	transition: all .4s;
     opacity: 0;
@@ -153,7 +155,7 @@ body { font: 16px/1.8 "Microsoft Yahei",verdana;}
     top: 60%;
     left: 50%;
     margin-top: 251px;
-    
+    margin-top: -50px;
     -webkit-transition: all .4s;
 	transition: all .4s;
     opacity: 0;
