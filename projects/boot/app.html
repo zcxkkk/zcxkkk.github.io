@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="LengToo test page">
-  <meta name="author" content="chenxi.name">
-  <title>LengToo!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <!-- <meta name="description" content="LengToo test page">  -->
+  <!-- <meta name="author" content="chenxi.name"> -->
+  <title>LengToo</title>
   <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
   <style type="text/css">
   body {
@@ -18,19 +17,13 @@
   .jumbotron {
     margin-bottom: 0;
   }
-
-  .lengtoologo {
-
-  }
   .navbar .btn {
     background-color: #FF99FF;
   }
 
   .sec1 {
     background-color: #FF6699;
-    background-image: 
-    /*url(http://lengxiaohua.com/img/page/appdl/biaoqing01.png);*/
-    url(images/2phone.png);
+    background-image: url(images/2phone.png);
     background-size: 297px 309px;
     background-repeat: no-repeat;
     background-position:70% 50%;
@@ -47,67 +40,74 @@
     color: #9D9D9D;
   }
   .sec4 { 
-    background-color: #00CCFF
-  };
+    background-color: #00CCFF;
+  }
   .sec4 .phone-1 img{
     -webkit-transition: all 0.5s ease-in-out;  
     transition: all 0.5s ease-in-out; 
   }
 
-  /*.sec4 .phone-1 img:hover{
+  .sec4 .phone-1 img:hover{
     -moz-transform: rotate(-10deg); 
     -webkit-transform: rotate(-10deg); 
     -ms-transform: rotate(-10deg); 
     transform: rotate(-10deg); 
-    }*/
-    .cc{
-      -webkit-transform: rotate(-10deg); 
-      transform: rotate(-10deg); 
-    }
+  }
+  .sec4 .phone-2 img{
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
 
-    /* µ¼º½ÏÂÀ­¿ò Êó±ê»®¹ý¼´¿É´¥·¢¶þ¼¶²Ëµ¥ */
-    .navbar .nav > li .dropdown-menu {
-      margin: 0;
-    }
-    .navbar .nav > li:hover .dropdown-menu {
-      display: block;
-    }
-    </style>
-  </head>
+  .sec4 .phone-2 img:hover{
+    -moz-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
 
-  <body>
-    <!-- nav bar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Project LengToo</a>
+  /* é¼ æ ‡åˆ’è¿‡èœå• */
+  .navbar .nav > li .dropdown-menu {
+    margin: 0;
+  }
+  .navbar .nav > li:hover .dropdown-menu {
+    display: block;
+  }
+  </style>
+</head>
+
+<body>
+  <!-- nav bar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Project LengToo</a>
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+         <li class="active"><a href="#">App</a></li>
+         <li><a href="#">iOS</a></li>
+         <li><a href="#">Android</a></li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+           <li><a href="#">Contact</a></li>
+           <li><a href="#">Address</a></li>
+           <li class="divider"></li>
+           <li><a href="#">Comic</a></li>
+           <li class="divider"></li>
+           <li><a href="#">å…³äºŽæˆ‘</a></li>
+         </ul>
+       </li>
+       <form class="navbar-form navbar-right" role="search">
+         <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" />
         </div>
-
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-           <li class="active"><a href="#">App</a></li>
-           <li><a href="#">iOS</a></li>
-           <li><a href="#">Android</a></li>
-           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-             <li><a href="#">Contact</a></li>
-             <li><a href="#">Address</a></li>
-             <li class="divider"></li>
-             <li><a href="#">Comic</a></li>
-             <li class="divider"></li>
-             <li><a href="#">Test</a></li>
-           </ul>
-         </li>
-         <form class="navbar-form navbar-right" role="search">
-           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" />
-          </div>
-          <button type="submit" class="btn btn-default" onClick="javascript:alert('search la~');">Search</button>
-        </form>
-      </ul>
-    </div><!--/.navbar-collapse -->
-  </div>
+        <button type="submit" class="btn btn-default" onClick="javascript:alert('search la~');">Search</button>
+      </form>
+    </ul>
+  </div><!--/.navbar-collapse -->
+</div>
 </nav>
 
 <!-- Main jumbotron section 1 -->
@@ -140,14 +140,14 @@
       <div class="col-md-4 phone phone-1">
         <center>
           <div>
-            <img src="images/phone-1.png" alt="coldla" title="">
+            <img src="images/phone-1.png" alt="coldla" title="" />
           </div>
         </center>
       </div>
       <div class="col-md-4 phone phone-2">
         <center>
           <div>
-            <img src="images/phone-2.png" alt="coldla" title="">
+            <img src="images/phone-2.png" alt="coldla" title="" />
           </div>
         </center>
       </div>
@@ -171,7 +171,7 @@
       <div class="col-md-4">
         <center>
           <div>
-            <img src="http://lengxiaohua.com/img/page/appdl/biaoqing01.png" alt="ÀäÍÃ" title="">
+            <img src="http://lengxiaohua.com/img/page/appdl/biaoqing01.png" alt="cold" title="">
           </div>
         </center>
         <h2 class="text-center">Always Focus</h2>
@@ -180,7 +180,7 @@
       <div class="col-md-4">
         <center>
           <div>
-            <img src="http://lengxiaohua.com/img/page/appdl/biaoqing02.png" alt="ÀäÍÃ" title="">
+            <img src="http://lengxiaohua.com/img/page/appdl/biaoqing02.png" alt="cold" title="" />
           </div>
         </center>
         <h2 class="text-center">Cold Jokes</h2>
@@ -189,7 +189,7 @@
       <div class="col-md-4">
         <center>
           <div>
-            <img src="http://lengxiaohua.com/img/page/appdl/biaoqing03.png" alt="ÀäÍÃ" title="">
+            <img src="http://lengxiaohua.com/img/page/appdl/biaoqing03.png" alt="cold" title="" />
           </div>
         </center>
         <h2 class="text-center">Editor Recommends</h2>
@@ -210,21 +210,10 @@
   </div>
 </div>
 
-
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 <script type="text/javascript">
 $(function(){
-  $(".phone-1 img").hover(
-    function () {
-      $(this).addClass("cc");
-    },
-    function () {
-      $(this).removeClass("cc");
-    }
-  );
 });
 </script>
 </body>
