@@ -1,10 +1,9 @@
 *.bak
 /.idea
 *.name
-projects/pagepiling/.idea/*.*
-projects/pagepiling/.idea/scopes/scope_settings.xml
-projects/163/*.*
-projects/163.rar
-projects/fullpage/.idea/*.*
-projects/Swiper-Smooth-Progress-master/*.*
+projects/pagepiling/.idea/
+projects/163/
+projects/fullpage/.idea/**
+projects/Swiper-Smooth-Progress-master/
 
+projects/fullpage/.idea/workspace.xml
