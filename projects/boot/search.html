@@ -8,6 +8,7 @@
     <meta name="author" content="chenxi.name">
     <title>LengToo Search</title>
     <link href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/bootstrap-datepicker/1.3.1/css/datepicker3.min.css" rel="stylesheet">
     <style type="text/css">
         body {
             padding-top: 50px;
@@ -60,6 +61,7 @@
         .navbar .nav > li:hover .dropdown-menu {
             display: block;
         }
+
         /* modal垂直居中 */
         .modal-dialog {
             /*transform: translate(0, 50%) !important;*/
@@ -169,13 +171,14 @@
             </div>
             <!-- 框体内容 -->
             <div class="modal-body">
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" role="form" id="signin-form">
                     <div class="form-group">
                         <label for="signin-email" class="col-sm-3 control-label">注册邮箱</label>
 
                         <div class="col-sm-7">
                             <input type="text" class="form-control" id="signin-email"
                                    placeholder="E-mail">
+
                             <p class="help-block">长度不能超过6位!</p>
                         </div>
                     </div>
@@ -201,6 +204,7 @@
                         <div class="col-sm-7">
                             <input type="password" class="form-control" id="signin-pwd-ag"
                                    placeholder="Password">
+
                             <p class="help-block">两次输入密码不一致!</p>
                         </div>
                     </div>
@@ -216,11 +220,19 @@
                                    value="2" checked> 不详
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">生日</label>
+
+                        <div class="col-sm-7">
+                            <input id="birth-datepick" size="16" type="text" value="" readonly>
+                            <span class="add-on"><i class="icon-th"></i></span>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">注册</button>
+                <button type="submit" class="btn btn-primary" form="signin-form" id="signin-btn-submit">注册</button>
             </div>
         </div>
     </div>
@@ -228,6 +240,7 @@
 
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-datepicker/1.3.1/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript">
     $(function () {
         $('#searchbtn').click(function () {
@@ -235,8 +248,8 @@
         });
 
 //        $('.modal-dialog').css({position:absolute,'margin-top':'400px'});
-        $('#signin-email').change(function(){
-            if (this.value.trim().length!=0 && this.value.trim().length<6) {
+        $('#signin-email').change(function () {
+            if (this.value.trim().length != 0 && this.value.trim().length < 6) {
                 $('#signin-email').parent().removeClass('has-error');
                 $('#signin-email').parent().find('p').hide();
             } else {
@@ -245,7 +258,7 @@
             }
         });
 
-        $('#signin-pwd-ag').change(function(){
+        $('#signin-pwd-ag').change(function () {
             if ($('#signin-pwd-ag').val() != $('#signin-pwd').val()) {
                 $('#signin-pwd-ag').parent().addClass('has-error');
                 $('#signin-pwd-ag').parent().find('p').show();
@@ -255,6 +268,11 @@
             }
 
         });
+
+        $('#birth-datepick').datepicker({
+            format: 'yyyy-mm-dd'
+        });
+
     });
 </script>
 </body>
